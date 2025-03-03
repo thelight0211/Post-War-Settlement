@@ -1,0 +1,629 @@
+dynamic_puppet_category = {
+
+	return_cores_to_ally = {
+		icon = generic_agreement
+
+		priority = 999
+
+		available = {
+			if = {
+				limit = { has_war = yes }
+			}
+			else = {
+				has_war = no
+			}
+		}
+
+		visible = {
+			is_in_faction = yes
+			NOT = { has_country_flag = KR_returning_land }
+			FROM = {
+				is_in_faction_with = ROOT
+				exists = yes
+			}
+			any_owned_state = {
+				OR = {
+					is_core_of = FROM
+					}
+				NOT = {
+				OR = {
+					AND = {
+						ROOT = { tag = ITA }
+						OR = {
+							state = 163 #Zara
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = FRA }
+						OR = {
+							state = 320
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ITA }
+						OR = {
+							state = 103 #Dalmatia
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						OR = {
+							state = 735 #Savoy
+						}
+					}
+				}
+
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						OR = {
+							state = 1
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						OR = {
+							state = 74
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						OR = {
+							state = 69
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						OR = {
+							state = 972
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ITA }
+						OR = {
+							state = 846
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ENG }
+						OR = {
+							state = 331
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ENG }
+						OR = {
+							state = 332
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = FRA }
+						OR = {
+							state = 320
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = POR }
+						OR = {
+							state = 321
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = IRE }
+						OR = {
+							state = 119
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						OR = {
+							state = 119
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ENG }
+						OR = {
+							state = 119
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = SCO }
+						OR = {
+							state = 119
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						OR = {
+							state = 39
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						OR = {
+							state = 28
+						}
+					}
+				}
+
+				OR = {
+					AND = {
+						ROOT = { tag = GER }
+						OR = {
+							state = 85
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = GER }
+						OR = {
+							state = 807
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = HUN }
+						OR = {
+							state = 76
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						OR = {
+							state = 45
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = GER }
+						OR = {
+							state = 188
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = GER }
+						OR = {
+							state = 86
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = GER }
+						OR = {
+							state = 762
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ENG }
+						OR = {
+							state = 659 #Aden
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						OR = {
+							state = 45 #Vojvoina
+						}
+					}
+				} 
+						OR = {
+							is_claimed_by = ROOT
+							is_core_of = ROOT
+							has_state_flag = KR_keeping_stateROOT
+						}
+					}
+				OR = {
+					any_neighbor_state = { is_owned_by = FROM }
+					is_coastal = yes
+				}
+
+			}
+		}
+
+		target_root_trigger = {
+			is_in_faction = yes
+		}
+
+		target_array = allies
+
+		target_trigger = {
+			FROM = {
+				is_in_faction_with = ROOT
+				exists = yes
+			}
+		}
+
+		cost = 0
+
+		fire_only_once = no
+		ai_will_do = {
+			factor = 1000
+#			modifier = {
+#				factor = 0
+#				has_country_flag = { flag = KR_checking_for_possible_annexations value > 0 }
+#			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision return_cores_to_ally target: [From.GetName]"
+			set_country_flag = KR_returning_land
+			FROM = { save_event_target_as = return_to }
+			country_event = kr.political.75
+		}
+	}
+
+	return_cores_to_subject = {
+		icon = generic_agreement
+
+		priority = 999
+
+		available = {
+			if = {
+				limit = { has_war = yes }
+			}
+			else = {
+				has_war = no
+			}
+		}
+
+		visible = {
+			num_subjects > 0
+			NOT = { has_country_flag = KR_returning_land }
+			FROM = {
+				is_subject_of = ROOT
+				NOT = { is_in_faction_with = ROOT }
+				exists = yes
+			}
+			NOT = { has_state_flag = KR_keeping_stateROOT }
+			any_owned_state = {
+				OR = {
+					is_core_of = FROM
+					}
+				NOT = { 
+						OR = {
+							is_claimed_by = ROOT
+							is_core_of = ROOT
+							has_state_flag = KR_keeping_stateROOT
+						}
+					}
+				NOT = {
+					OR = {
+					AND = {
+						ROOT = { tag = ITA }
+						OR = {
+							state = 163 #Zara
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = FRA }
+						OR = {
+							state = 320
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ITA }
+						OR = {
+							state = 103 #Dalmatia
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						OR = {
+							state = 735 #Savoy
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						OR = {
+							state = 103
+						}
+					}
+				}
+
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						OR = {
+							state = 1
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ITA }
+						OR = {
+							state = 846
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ENG }
+						OR = {
+							state = 331
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ENG }
+						OR = {
+							state = 332
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = FRA }
+						OR = {
+							state = 320
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = POR }
+						OR = {
+							state = 321
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = IRE }
+						OR = {
+							state = 119
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ENG }
+						OR = {
+							state = 119
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						OR = {
+							state = 119
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = SCO }
+						OR = {
+							state = 119
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						OR = {
+							state = 39
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = GER }
+						OR = {
+							state = 85
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						OR = {
+							state = 28
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = GER }
+						OR = {
+							state = 807
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = HUN }
+						OR = {
+							state = 76
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						OR = {
+							state = 45
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = GER }
+						OR = {
+							state = 188
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = GER }
+						OR = {
+							state = 86
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = GER }
+						OR = {
+							state = 762
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ENG }
+						OR = {
+							state = 659 #Aden
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						OR = {
+							state = 45 #Vojvoina
+						}
+					}
+				}  
+						OR = {
+							is_claimed_by = ROOT
+							is_core_of = ROOT
+							has_state_flag = KR_keeping_stateROOT
+						}
+					}
+				OR = {
+					any_neighbor_state = { is_owned_by = FROM }
+					is_coastal = yes
+				}
+
+			}
+		}
+
+		target_root_trigger = {
+			num_subjects > 0
+		}
+
+		target_array = subjects
+
+		target_trigger = {
+			FROM = {
+				is_subject_of = ROOT
+				NOT = { is_in_faction_with = ROOT }
+				exists = yes
+			}
+		}
+
+		cost = 0
+
+		fire_only_once = no
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_country_flag = { flag = KR_checking_for_possible_annexations value > 0 }
+			}
+		}
+
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName]: Decision return_cores_to_subject target: [From.GetName]"
+			set_country_flag = KR_returning_land
+			FROM = { save_event_target_as = return_to }
+			country_event = kr.political.75
+		}
+	}
+
+
+
+	return_cores_to_master = {
+		icon = generic_agreement
+
+		priority = 999
+
+		visible = {
+			always = yes
+	}
+
+		target_trigger = {
+			FROM = {
+				is_subject_of = ROOT
+				any_owned_state = {
+					OR= {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+					}
+					is_owned_by = FROM
+				}
+			}	
+        }
+
+		cost = 0
+
+		fire_only_once = no
+		ai_will_do = {
+			factor = 1000
+		}
+
+		complete_effect = {
+			country_event = puppets_give_cores.1
+		}
+	}
+}
+
+

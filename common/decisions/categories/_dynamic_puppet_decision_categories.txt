@@ -1,0 +1,11 @@
+dynamic_puppet_category = {
+	icon = GFX_decision_category_generic_foreign_policy
+	priority = 100
+}
+
+annexation_decisions = {
+	icon = GFX_decision_cat_annexation
+	picture = GFX_decision_cat_picture_annexation
+	priority = 999
+
+}
