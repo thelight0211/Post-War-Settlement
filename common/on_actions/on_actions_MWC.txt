@@ -1,0 +1,1804 @@
+on_actions = {
+
+	on_state_control_changed = {
+		effect = {	
+			if = {
+				limit = {
+					FROM.FROM = {
+						AND = {
+							OR = {
+								is_claimed_by = ROOT
+								is_core_of = ROOT
+							}
+							is_capital = no
+						}
+					}
+				}
+				set_state_owner = FROM.FROM
+			}
+			if = {
+				limit = {
+					FROM.FROM = {
+						AND = {
+							OR = {
+								is_claimed_by = ROOT
+								is_core_of = ROOT
+							}
+							is_capital = yes
+						}
+					}
+				}
+				set_variable = {
+					capitol = FROM.FROM
+				}
+			}
+		}
+	}
+	#This checks every state you occupy that you have a claim or core on and transfers them to you
+	on_weekly = {
+		effect = {
+				IF = {
+					limit = {
+						POL = {
+							 exists = yes
+							 has_capitulated = yes
+						}
+						SOV = {
+           						 controls_state = 10
+       						}
+					}
+					SOV = { 
+						annex_country = { target = POL }
+					}
+				}
+			if = {
+				limit = {
+					has_war = yes
+					num_occupied_states > 0
+				}
+				every_controlled_state = {
+					limit = {
+						AND = {
+							OR = {
+								is_claimed_by = ROOT
+								is_core_of = ROOT
+							}
+							is_capital = no
+						}
+					}
+					ROOT = {
+						set_state_owner = PREV
+					}
+				}
+			}
+		}
+	}
+	on_state_control_changed = {
+			effect = {
+				if = {
+					limit = {				
+       						 TUR = {
+           						 owns_state = 182
+       						 }
+   				 	}
+					TUR = {
+     						add_state_claim = 182
+   				   	}	
+				}
+				if = {
+					limit = {				
+       						 TUR = {
+           						 owns_state = 164
+       						 }
+   				 	}
+					TUR = {
+     						add_state_claim = 164
+   				   	}	
+				}
+				if = {
+					limit = {				
+       						 SOV = {
+           						 owns_state = 537
+       						 }
+   				 	}
+					SOV = {
+     						add_state_claim = 537
+   				   	}	
+				}
+				if = {
+					limit = {				
+       						 TUR = {
+           						 owns_state = 187
+       						 }
+   				 	}
+					TUR = {
+     						add_state_claim = 187
+   				   	}	
+				}
+				if = {	
+					limit = {		
+       						 GER = {
+           						 owns_state = 86
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 86
+   				   	}
+				}
+				if = {	
+					limit = {		
+       						 GER = {
+           						 owns_state = 63
+       						 }
+   				 	}
+					GER = {
+     						add_state_core = 63
+   				   	}
+				}
+				if = {	
+					limit = {		
+       						 GER = {
+           						 owns_state = 68
+       						 }
+   				 	}
+					GER = {
+     						add_state_core = 68
+   				   	}
+				}
+				if = {	
+					limit = {		
+       						 GER = {
+           						 owns_state = 66
+       						 }
+   				 	}
+					GER = {
+     						add_state_core = 66
+   				   	}
+				}
+				if = {	
+					limit = {		
+       						 GER = {
+           						 owns_state = 67
+       						 }
+   				 	}
+					GER = {
+     						add_state_core = 67
+   				   	}
+				}
+				if = {	
+					limit = {		
+       						 GER = {
+           						 owns_state = 5
+       						 }
+   				 	}
+					GER = {
+     						add_state_core = 5
+   				   	}
+				}
+				if = {	
+					limit = {		
+       						 GER = {
+           						 owns_state = 196
+							 has_government = fascism
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 196
+   				   	}
+				}
+				if = {	
+					limit = {		
+       						 GER = {
+           						 owns_state = 4
+           						 owns_state = 39
+							 has_government = fascism
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 39
+   				   	}
+				}
+				if = {	
+					limit = {		
+       						 GER = {
+           						 owns_state = 4
+           						 owns_state = 850
+							 has_government = fascism
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 850
+   				   	}
+				}
+				if = {	
+					limit = {		
+       						 GER = {
+           						 owns_state = 195
+							 has_government = fascism
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 195
+   				   	}
+				}
+				if = {	
+					limit = {		
+       						 GER = {
+           						 owns_state = 137
+							 has_government = fascism
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 137
+   				   	}
+				}
+				if = {	
+					limit = {		
+       						 GER = {
+           						 owns_state = 86
+							 has_government = fascism
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 86
+   				   	}
+				}
+				if = {	
+					limit = {		
+       						 GER = {
+           						 owns_state = 797
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 797
+   				   	}
+				}
+				if = {	
+					limit = {		
+       						 GER = {
+           						 owns_state = 798
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 798
+   				   	}
+				}
+				if = {	
+					limit = {		
+       						 GER = {
+           						 owns_state = 1000
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 1000
+   				   	}
+				}
+				if = {	
+					limit = {		
+       						 GER = {
+           						 owns_state = 807
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 807
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 GER = {
+           						 owns_state = 912
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 912
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 SOV = {
+           						 owns_state = 146
+       						 }
+   				 	}
+					SOV = {
+     						add_state_claim = 146
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 SOV = {
+           						 owns_state = 198
+           						 owns_state = 834
+           						 owns_state = 78
+       						 }
+   				 	}
+					SOV = {
+     						add_state_claim = 78
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 SOV = {
+           						 owns_state = 89
+           						 owns_state = 91
+           						 owns_state = 73
+       						 }
+   				 	}
+					SOV = {
+     						add_state_claim = 73
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 SOV = {
+           						 owns_state = 766
+       						 }
+   				 	}
+					SOV = {
+     						add_state_claim = 766
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 SOV = {
+           						 owns_state = 80
+       						 }
+   				 	}
+					SOV = {
+     						add_state_claim = 80
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 SOV = {
+           						 owns_state = 147
+       						 }
+   				 	}
+					SOV = {
+     						add_state_claim = 147
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 SOV = {
+           						 owns_state = 722
+       						 }
+   				 	}
+					SOV = {
+     						add_state_claim = 722
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 SOV = {
+           						 owns_state = 188
+       						 }
+   				 	}
+					SOV = {
+     						add_state_claim = 188
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 SOV = {
+           						 owns_state = 207
+           						 owns_state = 206
+           						 owns_state = 204
+           						 owns_state = 194
+           						 owns_state = 201
+           						 owns_state = 199
+           						 owns_state = 89
+           						 owns_state = 91
+           						 owns_state = 93
+           						 owns_state = 94
+           						 owns_state = 95
+           						 owns_state = 96
+           						 owns_state = 784
+       						 }
+   				 	}
+					SOV = {
+     						add_state_claim = 89
+     						add_state_claim = 91
+     						add_state_claim = 93
+     						add_state_claim = 94
+     						add_state_claim = 95
+     						add_state_claim = 96
+     						add_state_claim = 784
+   				   	}
+				}
+				if = {		
+					limit = {	
+       						 GER = {
+           						 owns_state = 85
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 85
+   				   	}
+				}
+				if = {		
+					limit = {	
+       						 AUS = {
+           						 owns_state = 52
+       						 }
+   				 	}
+					AUS = {
+     						add_state_claim = 52
+   				   	}
+				}
+				if = {		
+					limit = {	
+       						 SOV = {
+           						 owns_state = 555
+       						 }
+   				 	}
+					SOV = {
+     						add_state_claim = 555
+   				   	}
+				}
+				if = {		
+					limit = {	
+       						 AUS = {
+           						 owns_state = 53
+       						 }
+   				 	}
+					AUS = {
+     						add_state_claim = 53
+   				   	}
+				}
+				if = {		
+					limit = {	
+       						 CZE = {
+           						 owns_state = 762
+           						 owns_state = 66
+           						 owns_state = 67
+       						 }
+   				 	}
+					CZE = {
+     						add_state_claim = 762
+     						add_state_claim = 66
+     						add_state_claim = 67
+   				   	}
+				}
+				if = {		
+					limit = {	
+       						 AUS = {
+           						 owns_state = 54
+       						 }
+   				 	}
+					AUS = {
+     						add_state_claim = 54
+   				   	}
+				}
+				if = {		
+					limit = {	
+       						 AUS = {
+           						 owns_state = 102
+       						 }
+   				 	}
+					AUS = {
+     						add_state_claim = 102
+   				   	}
+				}
+				if = {		
+					limit = {	
+       						 AUS = {
+           						 owns_state = 972
+       						 }
+   				 	}
+					AUS = {
+     						add_state_claim = 972
+   				   	}
+				}
+				if = {	
+					limit = {		
+       						 GER = {
+           						 owns_state = 762
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 762
+   				   	}
+				}
+				if = {
+					limit = {			
+       						 GER = {
+           						 controls_state = 97
+							 has_government = fascism
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 97
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 GER = {
+           						 owns_state = 98
+							 has_government = fascism
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 98
+   				   	}
+				}
+				if = {
+					limit = {			
+       						 GER = {
+           						 owns_state = 87
+							 has_government = fascism
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 87
+   				   	}
+				}
+				if = {
+					limit = {			
+       						 GER = {
+           						 owns_state = 69
+							 has_government = fascism
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 69
+   				   	}
+				}
+				if = {
+					limit = {			
+       						 GER = {
+           						 owns_state = 972
+							 has_government = fascism
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 972
+   				   	}
+				}
+				if = {
+					limit = {			
+       						 GER = {
+           						 owns_state = 74
+							 has_government = fascism
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 74
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 POL = {
+           						 owns_state = 5
+       						 }
+   				 	}
+					POL = {
+     						add_state_claim = 5
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 POL = {
+           						 owns_state = 63
+       						 }
+   				 	}
+					POL = {
+     						add_state_claim = 63
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 POL = {
+           						 owns_state = 68
+       						 }
+   				 	}
+					POL = {
+     						add_state_claim = 68
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 POL = {
+           						 owns_state = 66
+       						 }
+   				 	}
+					POL = {
+     						add_state_claim = 66
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 POL = {
+           						 owns_state = 67
+       						 }
+   				 	}
+					POL = {
+     						add_state_claim = 67
+   				   	}
+				}
+
+				if = {
+					limit = {				
+       						 SOV = {
+           						 owns_state = 763
+       						 }
+   				 	}
+					SOV = {
+     						add_state_claim = 763
+   				   	}
+				}
+				if = {
+					limit = {				
+						ITA = {
+							owns_state = 103
+						}
+					}
+					ITA = {
+						add_state_claim = 103
+					}
+				}
+				if = {
+					limit = {				
+						ITA = {
+							owns_state = 116
+						}
+					}
+					ITA = {
+						add_state_claim = 116
+					}
+				}
+				if = {
+					limit = {
+						ITA = {
+							owns_state = 802
+							NOT = { owns_state = 44 }
+						}
+						 ALB = {
+							 exists = yes
+							 is_subject_of = ITA
+						}
+					}
+					ALB = {
+						transfer_state = 802
+					}
+					ITA = {
+						remove_state_claim = 802
+					}
+				}
+				if = {
+					limit = {
+						ITA = {
+							owns_state = 970
+							NOT = { owns_state = 44 }
+						}
+						 ALB = {
+							 exists = yes
+							 is_subject_of = ITA
+						}
+					}
+					ALB = {
+						transfer_state = 970
+					}
+					ITA = {
+						remove_state_claim = 970
+					}
+				}
+				if = {
+					limit = {				
+						ITA = {
+							owns_state = 736
+						}
+					}
+					ITA = {
+						add_state_core = 736
+					}
+				}
+				if = {
+					limit = {				
+						ALB = {
+							owns_state = 802
+						}
+					}
+					ALB = {
+						add_state_claim = 802
+					}
+				}
+				if = {
+					limit = {				
+						ALB = {
+							owns_state = 970
+						}
+					}
+					ALB = {
+						add_state_claim = 970
+					}
+				}
+				if = {
+					limit = {				
+						ITA = {
+							owns_state = 852
+						}
+					}
+					ITA = {
+						add_state_claim = 852
+					}
+				}
+				if = {
+					limit = {				
+       						 ITA = {
+           						 owns_state = 735
+       						 }
+   				 	}
+					ITA = {
+     						add_state_claim = 735
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 ITA = {
+           						 owns_state = 1
+       						 }
+   				 	}
+					ITA = {
+     						add_state_claim = 1
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 ITA = {
+           						 owns_state = 164
+       						 }
+   				 	}
+					ITA = {
+     						add_state_claim = 164
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 ITA = {
+           						 owns_state = 846
+       						 }
+   				 	}
+					ITA = {
+     						add_state_core = 846
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 ENG = {
+           						 owns_state = 331
+       						 }
+   				 	}
+					ENG = {
+     						add_state_claim = 331
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 ENG = {
+           						 owns_state = 326
+       						 }
+   				 	}
+					ENG = {
+     						add_state_claim = 326
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 ENG = {
+           						 owns_state = 332
+       						 }
+   				 	}
+					ENG = {
+     						add_state_claim = 332
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 ROOT = {
+           						 owns_state = 320
+       						 }
+   				 	}
+					ROOT = {
+     						add_state_claim = 320
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 ROOT = {
+           						 owns_state = 321
+       						 }
+   				 	}
+					ROOT = {
+     						add_state_claim = 321
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 POR = {
+           						 owns_state = 171
+       						 }
+   				 	}
+					POR = {
+     						add_state_claim = 171
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 GER = {
+           						 owns_state = 85
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 85
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 GER = {
+           						 owns_state = 28
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 28
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 GER = {
+           						 owns_state = 807
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 807
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 HUN = {
+           						 owns_state = 76
+       						 }
+   				 	}
+					HUN = {
+     						add_state_claim = 76
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 HUN = {
+           						 owns_state = 73
+       						 }
+   				 	}
+					HUN = {
+     						add_state_claim = 73
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 HUN = {
+           						 owns_state = 45
+       						 }
+   				 	}
+					HUN = {
+     						add_state_claim = 45
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 HUN = {
+           						 owns_state = 975
+       						 }
+   				 	}
+					HUN = {
+     						add_state_claim = 975
+   				   	}
+				}
+
+				if = {
+					limit = {				
+       						 HUN = {
+           						 owns_state = 45
+           						 owns_state = 76
+           						 owns_state = 83
+       						 }
+   				 	}
+					HUN = {
+     						add_state_claim = 83
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 HUN = {
+           						 owns_state = 45
+           						 owns_state = 76
+           						 owns_state = 84
+
+       						 }
+   				 	}
+					HUN = {
+     						add_state_claim = 84
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 HUN = {
+           						 owns_state = 45
+           						 owns_state = 76
+           						 owns_state = 83
+           						 owns_state = 84
+           						 owns_state = 82
+       						 }
+   				 	}
+					HUN = {
+     						add_state_claim = 82
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 HUN = {
+           						 owns_state = 45
+           						 owns_state = 76
+           						 owns_state = 83
+           						 owns_state = 84
+           						 owns_state = 82
+           						 owns_state = 764	
+       						 }
+   				 	}
+					HUN = {
+     						add_state_claim = 764
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 HUN = {
+           						 owns_state = 70	
+       						 }
+   				 	}
+					HUN = {
+     						add_state_claim = 70
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 HUN = {
+           						 owns_state = 71	
+       						 }
+   				 	}
+					HUN = {
+     						add_state_claim = 71
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 HUN = {
+           						 owns_state = 664	
+       						 }
+   				 	}
+					HUN = {
+     						add_state_claim = 664
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 GRE = { exists = yes}
+   				 	}
+					GRE = {
+     						add_state_core = 184
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 GRE = { exists = yes}
+   				 	}
+					GRE = {
+     						add_state_core = 731
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 YUG = { exists = yes}
+   				 	}
+					YUG = {
+     						add_state_core = 106
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 YUG = { exists = yes}
+   				 	}
+					YUG = {
+     						add_state_core = 970
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 YUG = { exists = yes}
+   				 	}
+					YUG = {
+     						add_state_core = 803
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 ROM = {
+           						 owns_state = 764	
+       						 }
+   				 	}
+					ROM = {
+     						add_state_claim = 764
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 ROM = {
+           						 controls_state = 192	
+       						 }
+   				 	}
+					ROM = {
+     						add_state_claim = 192
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 ROM = {
+           						 owns_state = 154	
+       						 }
+   				 	}
+					ROM = {
+     						add_state_claim = 154
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 ROM = {
+           						 controls_state = 834
+       						 }
+   				 	}
+					ROM = {
+     						add_state_claim = 834
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 ROM = {
+           						 controls_state = 198	
+       						 }
+   				 	}
+					ROM = {
+     						add_state_claim = 198
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 ROM = {
+           						 owns_state = 80	
+       						 }
+   				 	}
+					ROM = {
+     						add_state_claim = 80
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 ROM = {
+           						 owns_state = 766	
+       						 }
+   				 	}
+					ROM = {
+     						add_state_claim = 766
+   				   	}	
+				}
+				if = {
+					limit = {				
+       						 GRE = {
+           						 owns_state = 342	
+       						 }
+   				 	}
+					GRE = {
+     						add_state_claim = 342
+   				   	}	
+				}
+				if = {
+					limit = {				
+       						 GRE = {
+           						 owns_state = 339
+       						 }
+   				 	}
+					GRE = {
+     						add_state_claim = 339
+   				   	}	
+				}
+				if = {
+					limit = {				
+       						 GRE = {
+           						 owns_state = 340	
+       						 }
+   				 	}
+					GRE = {
+     						add_state_claim = 340
+   				   	}	
+				}
+				if = {
+					limit = {				
+       						 GRE = {
+           						 owns_state = 805
+       						 }
+   				 	}
+					GRE = {
+     						add_state_claim = 805
+   				   	}	
+				}
+				if = {
+					limit = {				
+       						 TUR = {
+           						 owns_state = 677
+       						 }
+   				 	}
+					TUR = {
+     						add_state_claim = 677
+   				   	}	
+				}
+				if = {
+					limit = {				
+       						 TUR = {
+           						 owns_state = 230
+       						 }
+   				 	}
+					TUR = {
+     						add_state_claim = 230
+   				   	}	
+				}
+				if = {
+					limit = {				
+       						 TUR = {
+           						 owns_state = 680	
+       						 }
+   				 	}
+					TUR = {
+     						add_state_claim = 680
+   				   	}	
+				}
+				if = {
+					limit = {				
+       						 TUR = {
+           						 owns_state = 184
+       						 }
+   				 	}
+					TUR = {
+     						add_state_claim = 184
+   				   	}	
+				}
+				if = {
+					limit = {				
+       						 UKR = {
+           						 owns_state = 137	
+       						 }
+   				 	}
+					UKR = {
+     						add_state_claim = 137
+   				   	}	
+				}
+				if = {
+					limit = {				
+       						 GER = {
+           						 owns_state = 188
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 188
+   				   	}
+				}
+
+				if = {
+					limit = {				
+       						 GER = {
+           						 owns_state = 86
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 86
+   				   	}
+				}
+
+				if = {
+					limit = {				
+       						 GER = {
+           						 owns_state = 762
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 762
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 GER = {
+           						 owns_state = 72
+       						 }
+   				 	}
+					GER = {
+     						add_state_claim = 72
+   				   	}
+				}
+
+				if = {
+					limit = {				
+       						 YUG = {
+           						 owns_state = 45
+       						 }
+   				 	}
+					YUG = {
+     						add_state_claim = 45
+   				   	}
+				}
+
+				if = {
+					limit = {				
+       						 ITA = {
+           						 owns_state = 163
+       						 }
+   				 	}
+					ITA = {
+     						add_state_core = 163
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 ITA = {
+           						 owns_state = 102
+       						 }
+   				 	}
+					ITA = {
+     						remove_state_claim = 102
+   				   	}
+				}
+
+				if = {
+					limit = {				
+       						 ITA = {
+           						 owns_state = 856
+       						 }
+   				 	}
+					ITA = {
+     						remove_state_claim = 856
+   				   	}
+				}		
+
+				if = {
+					limit = {				
+       						 FIN = {
+           						 owns_state = 216
+       						 }
+   				 	}
+					FIN = {
+     						add_state_claim = 216
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 FIN = {
+           						 owns_state = 215
+       						 }
+   				 	}
+					FIN = {
+     						add_state_claim = 215
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 FIN = {
+           						 owns_state = 213
+       						 }
+   				 	}
+					FIN = {
+     						add_state_claim = 213
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 MAN = {
+           						 owns_state = 561
+       						 }
+   				 	}
+					MAN = {
+     						add_state_claim = 561
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 MAN = {
+           						 owns_state = 560
+       						 }
+   				 	}
+					MAN = {
+     						add_state_claim = 560
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 MAN = {
+           						 owns_state = 409
+       						 }
+   				 	}
+					MAN = {
+     						add_state_claim = 409
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 MAN = {
+           						 owns_state = 408
+       						 }
+   				 	}
+					MAN = {
+     						add_state_claim = 408
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 MAN = {
+           						 owns_state = 657
+       						 }
+   				 	}
+					MAN = {
+     						add_state_claim = 657
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 JAP = {
+           						 owns_state = 655
+       						 }
+   				 	}
+					JAP = {
+     						add_state_claim = 655
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 JAP = {
+           						 owns_state = 555
+       						 }
+   				 	}
+					JAP = {
+     						add_state_core = 555
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 JAP = {
+           						 owns_state = 537
+       						 }
+   				 	}
+					JAP = {
+     						add_state_claim = 537
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 JAP = {
+           						 owns_state = 326
+       						 }
+   				 	}
+					JAP = {
+     						add_state_claim = 326
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 JAP = {
+           						 owns_state = 728
+       						 }
+   				 	}
+					JAP = {
+     						add_state_claim = 728
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 JAP = {
+           						 owns_state = 743
+       						 }
+   				 	}
+					JAP = {
+     						add_state_claim = 743
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 JAP = {
+           						 owns_state = 609
+       						 }
+   				 	}
+					JAP = {
+     						add_state_claim = 609
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 JAP = {
+           						 owns_state = 637
+       						 }
+   				 	}
+					JAP = {
+     						add_state_claim = 637
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 JAP = {
+           						 owns_state = 591
+       						 }
+   				 	}
+					JAP = {
+     						add_state_claim = 591
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 ITA = {
+           						 owns_state = 446
+       						 }
+   				 	}
+					ITA = {
+     						add_state_claim = 446
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 JAP = {
+           						 owns_state = 524
+       						 }
+   				 	}
+					JAP = {
+     						add_state_claim = 524
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 JAP = {
+           						 owns_state = 745
+       						 }
+   				 	}
+					JAP = {
+     						add_state_claim = 745
+   				   	}
+				}
+
+				if = {
+					limit = {				
+						 MEN = {
+							 is_subject_of = JAP
+						}
+						MON  = {
+							 is_subject_of = JAP
+						}
+   				 	}
+					MEN = {
+     						transfer_state = 818
+     						transfer_state = 820
+     						transfer_state = 330
+     						transfer_state = 817
+     						transfer_state = 819
+   				   	}
+					MEN = {
+						add_state_core = 818
+						add_state_core = 820
+						add_state_core = 330
+						add_state_core = 817
+						add_state_core = 819
+					}
+				}
+				if = {
+					limit = {				
+						 MEN = {
+							 is_subject_of = JAP
+						}
+						 TAN  = {
+							 is_subject_of = JAP
+						}
+   				 	}
+					MEN = {
+     						transfer_state = 329
+   				   	}
+					MEN = {
+						add_state_core = 329
+					}
+				}
+				if = {
+					limit = {				
+       						 JAP = {
+           						 owns_state = 561
+       						 }
+						 MAN = {
+							 is_subject_of = JAP
+						}
+   				 	}
+					MAN = {
+     						transfer_state = 561
+   				   	}
+					JAP = {
+						remove_state_claim = 561
+					}
+				}
+				if = {
+					limit = {				
+       						 JAP = {
+           						 owns_state = 560
+       						 }
+						 MAN = {
+							 is_subject_of = JAP
+						}
+   				 	}
+					MAN = {
+     						transfer_state = 560
+   				   	}
+					JAP = {
+						remove_state_claim = 560
+					}
+				}
+				if = {
+					limit = {				
+       						 JAP = {
+           						 owns_state = 409
+       						 }
+						 MAN = {
+							 is_subject_of = JAP
+						}
+   				 	}
+					MAN = {
+     						transfer_state = 409
+   				   	}
+					JAP = {
+						remove_state_claim = 409
+					}
+				}
+				if = {
+					limit = {				
+       						 JAP = {
+           						 owns_state = 408
+       						 }
+						 MAN = {
+							 is_subject_of = JAP
+						}
+   				 	}
+					MAN = {
+     						transfer_state = 408
+   				   	}
+					JAP = {
+						remove_state_claim = 408
+					}
+				}
+				if = {
+					limit = {				
+       						 JAP = {
+           						 owns_state = 657
+       						 }
+						 MAN = {
+							 is_subject_of = JAP
+						}
+   				 	}
+					MAN = {
+     						transfer_state = 657
+   				   	}
+					JAP = {
+						remove_state_claim = 657
+					}
+				}
+				if = {
+					limit = {				
+       						 USA = {
+           						 owns_state = 484
+       						 }
+   				 	}
+					USA = {
+     						add_state_claim = 484
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 ITA = {
+           						 owns_state = 116
+       						 }
+   				 	}
+					ITA = {
+     						add_state_core = 116
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 POR = {
+           						 owns_state = 889
+       						 }
+   				 	}
+					POR = {
+     						add_state_claim = 889
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 ITA = {
+           						 owns_state = 1
+       						 }
+   				 	}
+					ITA = {
+     						add_state_core = 1
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 BUL = {
+           						 owns_state = 970
+       						 }
+   				 	}
+					BUL = {
+     						add_state_core = 970
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 BUL = {
+           						 owns_state = 803
+       						 }
+   				 	}
+					BUL = {
+     						add_state_core = 803
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 BUL = {
+           						 owns_state = 103
+       						 }
+   				 	}
+					BUL = {
+     						add_state_core = 103
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 LIT = {
+           						 owns_state = 784
+       						 }
+   				 	}
+					LIT = {
+     						add_state_core = 784
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 ITA = {
+           						 owns_state = 164
+       						 }
+   				 	}
+					ITA = {
+     						add_state_claim = 164
+   				   	}
+				}
+				if = {
+					limit = {				
+       						 GER = {
+							OR = {
+           						 owns_state = 9
+           						 owns_state = 75
+							}
+       						 }
+   				 	}
+					GER = {
+     						remove_state_claim = 9
+     						remove_state_claim = 75
+
+   				   	}
+				}
+				if = {
+					limit = { 
+						ITA = { exists = yes } 
+					}
+					every_state = {				
+							limit = {
+								NOT = { 
+									OR = {
+										state = 446 
+										state = 735
+										state = 103
+										state = 853
+										state = 1
+										state = 118
+										state = 177
+										state = 164
+									}
+								}
+								OR = {
+								is_core_of = ALB
+								is_core_of = YUG 
+								is_core_of = SOV
+								is_core_of = MNT
+								is_core_of = GRE
+								is_core_of = TUR
+								is_core_of = SYR
+								is_core_of = CYP
+								is_core_of = EGY
+								is_core_of = PAL
+								is_core_of = LEB
+								is_core_of = ALG
+								is_core_of = MOR
+								is_core_of = SPR
+								is_core_of = FRA
+								is_core_of = SPA
+								is_core_of = SOM
+								is_core_of = AFA
+								is_core_of = GIB
+								is_core_of = KEN
+								is_core_of = UGA
+								is_core_of = SUD
+								is_core_of = DEN
+								is_core_of = SAU
+								}
+
+							}
+							remove_claim_by = ITA
+   				 		}
+     	
+				}
+				if = {
+					limit = { 
+						GER = { exists = yes } 
+						has_government = fascism
+					}
+					every_state = {				
+							limit = {
+								NOT = { 
+									OR = {
+										state = 28
+										state = 8
+										state = 39
+										state = 850
+										state = 736
+										state = 852
+										state = 853
+										state = 102
+										state = 69
+										state = 972
+										state = 74
+										state = 912
+										state = 86
+										state = 807
+										state = 87
+										state = 98
+										state = 97
+										state = 762
+										state = 188
+										state = 195
+										state = 196
+										state = 137 
+										state = 85
+										state = 72
+									}
+								}
+
+							}
+							remove_claim_by = GER
+   				 		}
+     	
+				}
+				if = {
+					limit = {
+						LIT = {
+							 exists = yes
+						}
+						POL = {
+           						 owns_state = 784
+       						}
+						NOT = {				
+       							 POL = {
+           						 	owns_state = 95
+       						 	 }
+						}
+   				 	}
+					LIT = {
+     						transfer_state = 784
+   				   	}
+				}
+
+	}
+}
+}

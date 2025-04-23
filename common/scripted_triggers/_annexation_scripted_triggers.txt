@@ -1,0 +1,50 @@
+# Useful triggers for the annexation codebase
+is_valid_annexation_state = {
+	is_owned_by = ROOT
+	NOT = { 
+		OR = {
+			is_claimed_by = ROOT
+			is_core_of = ROOT
+			}
+	}
+	hidden_trigger = {
+		NOT = { has_state_flag = occupied_by_@ROOT }
+	}
+}
+
+is_clear_other_claims = {
+	NOT = {
+		any_other_country = {
+			is_ally_with = ROOT
+			PREV = { 
+				OR = { 
+				 is_claimed_by = PREV
+				 is_core_of = PREV 
+				}
+			}
+		}
+	}
+	OR = {
+		NOT = { has_variable = ambition_area_@ROOT }
+		ROOT = { is_ai = no }
+	}
+}
+
+
+ROOT_can_grant_land = {
+	exists = yes
+	NOT = {
+		has_war_with = ROOT
+		has_wargoal_against = ROOT
+		is_justifying_wargoal_against = ROOT
+		ROOT = { is_justifying_wargoal_against = PREV }
+		ROOT = { has_wargoal_against = PREV }
+		any_owned_state = { 	 
+		OR = {
+			is_claimed_by = ROOT
+			is_core_of = ROOT
+			}
+		} 
+	}
+	
+}
