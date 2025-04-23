@@ -1,0 +1,580 @@
+
+add_namespace = id.settlement
+add_namespace = border_settlement
+
+country_event = {
+    id = border_settlement.1	
+    fire_only_once = no
+    is_triggered_only = no
+    hidden = yes
+
+	trigger = {
+				ROOT = { has_war = no }
+                				any_state = {
+									is_coastal = no
+									is_owned_by = ROOT
+									NOT = { is_in_home_area = no }
+									NOT = { has_state_flag = connected_via_con }
+								}
+	}
+	immediate = { 
+		if = {
+			limit = {
+				any_state = {
+						is_owned_by = ROOT
+						is_coastal = no 
+						NOT = { has_state_flag = connected_via_con }
+						NOT = { is_in_home_area = no }
+						any_neighbor_state = {
+							is_coastal = yes
+							is_owned_by = ROOT
+						}
+				}
+			}
+			country_event = id.settlement.5 
+		}
+		if = {
+			limit = {
+				any_state = {
+						is_owned_by = ROOT
+						is_coastal = no 
+						NOT = { has_state_flag = connected_via_con }
+						NOT = { is_in_home_area = no }
+						any_neighbor_state = {
+							owner = { is_subject_of = ROOT }
+						}
+				}		
+			}
+			country_event = id.settlement.6
+		}
+		if = {
+			limit = {
+				any_state = {
+						is_owned_by = ROOT
+						is_coastal = no 
+						NOT = { has_state_flag = connected_via_con }
+						NOT = { is_in_home_area = no }
+						any_neighbor_state = {
+							has_state_flag = connected_via_con
+							is_owned_by = ROOT
+						}
+				}
+			}
+			country_event = id.settlement.7
+		}
+		if = {
+			limit = {
+				any_state = {
+						is_owned_by = ROOT
+						NOT = { is_in_home_area = no }
+						NOT = { has_state_flag = connected_via_con }
+						any_neighbor_state = {
+								is_in_home_area = no
+								is_owned_by = ROOT
+							}
+				}		
+			}
+			country_event = id.settlement.8
+		}
+	}
+    immediate = { country_event = id.settlement.1 }
+
+} 
+
+country_event = {
+    id = border_settlement.2
+    fire_only_once = no
+    is_triggered_only = no
+    hidden = yes
+
+	trigger = {
+					ROOT = { has_war = no }
+                		any_owned_state = {
+							any_neighbor_state = {
+								has_state_flag = Land_locked_state
+               				}
+							has_state_flag = borders_land_locked_state
+               			}
+
+	}
+    immediate = { country_event = id.settlement.2 days = 1 }
+
+}
+
+country_event = {
+    id = id.settlement.1	
+    fire_only_once = no
+    is_triggered_only = yes
+    hidden = yes
+
+    immediate = {
+	                	if = {		
+							limit = {	
+								ROOT = { has_war = no }
+                				any_state = {
+									is_coastal = no
+									is_owned_by = ROOT
+									NOT = { is_in_home_area = no }
+									NOT = { has_state_flag = connected_via_con }
+								}
+							}
+							random_state = {
+								limit = {
+									is_coastal = no
+									is_owned_by = ROOT
+									NOT = { is_in_home_area = no }
+									NOT = { has_state_flag = connected_via_con }
+								}
+								set_state_flag = Land_locked_state
+							}
+								every_state = {
+				        				limit = {
+							 	       	any_neighbor_state = {
+                        		            					has_state_flag = Land_locked_state
+							 	       	}
+				        				}
+				        		set_state_flag = borders_land_locked_state
+			    				}
+						}
+						if = {		
+							limit = {	
+								ROOT = { has_war = no }
+              				  				any_state = {
+											is_coastal = no
+											is_owned_by = ROOT
+											NOT = { is_in_home_area = no }
+											NOT = { has_state_flag = connected_via_con }
+										}
+							}
+						country_event = { id = border_settlement.1 days = 1 }
+						}
+					every_country = {
+						limit = {
+                			any_owned_state = {
+							any_neighbor_state = {
+									has_state_flag = Land_locked_state
+               					}
+								has_state_flag = borders_land_locked_state
+               				}
+						}
+					country_event = id.settlement.2
+					}
+			}
+
+} 
+
+country_event = {
+    id = id.settlement.2	
+    fire_only_once = no
+    is_triggered_only = yes
+    hidden = yes
+
+    immediate = {
+                if = {		
+					limit = {	
+                		any_owned_state = {
+							any_neighbor_state = {
+								has_state_flag = Land_locked_state
+               				}
+							has_state_flag = borders_land_locked_state
+               			}
+					}
+					country_event = id.settlement.3
+				}
+                if = {		
+					limit = {							
+							any_state = {
+								any_neighbor_state = {
+									has_state_flag = borders_land_locked_state
+									is_owned_by = ROOT
+               					}
+								has_state_flag = Land_locked_state
+								is_core_of = ROOT
+								owner = {
+								is_ally_with = ROOT
+								is_neighbor_of = ROOT 
+								}
+							}
+   				 	}
+			        every_state = {
+				        limit = {
+									any_neighbor_state = {
+										has_state_flag =  borders_land_locked_state
+										is_owned_by = ROOT
+               						}
+                                    has_state_flag = Land_locked_state
+									owner = {
+										is_ally_with = ROOT 
+									}
+									is_core_of = ROOT 
+						}
+                        clr_state_flag = Land_locked_state
+			        }
+			        every_state = {
+				        limit = {
+                                    has_state_flag = borders_land_locked_state
+									NOT = {
+										any_neighbor_state = {
+											has_state_flag = Land_locked_state
+               							}
+									}
+				        }
+                        clr_state_flag = borders_land_locked_state
+			        }
+				}
+	}
+
+}
+
+country_event = {
+    id = id.settlement.3
+    fire_only_once = no
+    is_triggered_only = yes
+    hidden = yes
+
+    immediate = {
+                if = {		
+					limit = {	
+                		any_owned_state = {
+							any_neighbor_state = {
+								has_state_flag = Land_locked_state
+								NOT = { is_core_of = ROOT }
+               				}
+							has_state_flag = borders_land_locked_state
+							
+               			}
+					}
+					country_event = { id = id.settlement.4 days = 5 }
+				}
+                if = {		
+					limit = {	
+                            any_state = {
+								any_neighbor_state = {
+									has_state_flag =  borders_land_locked_state
+									is_owned_by = ROOT
+               					}
+									is_core_of = ROOT
+									NOT = { is_owned_by = ROOT }
+									owner = {
+									is_neighbor_of = ROOT 
+									}
+                                    has_state_flag = Land_locked_state
+                            }
+   				 	}
+			        every_state = {
+				        limit = {
+									any_neighbor_state = {
+										has_state_flag =  borders_land_locked_state
+										is_owned_by = ROOT
+               						}
+									owner = {
+										is_neighbor_of = ROOT 
+									}
+									is_core_of = ROOT
+                                    has_state_flag = Land_locked_state
+				        }
+				        ROOT = { transfer_state = PREV }
+                        clr_state_flag = Land_locked_state
+			        }
+			        every_state = {
+				        limit = {
+                                    has_state_flag = borders_land_locked_state
+									NOT = {
+										any_neighbor_state = {
+											has_state_flag = Land_locked_state
+               							}
+									}
+				        }
+                        clr_state_flag = borders_land_locked_state
+			        }
+				}
+				if = {		
+					limit = {	
+                		any_owned_state = {
+							any_neighbor_state = {
+								has_state_flag = Land_locked_state
+								is_core_of = ROOT
+               				}
+							has_state_flag = borders_land_locked_state
+							
+               			}
+					}
+					country_event = id.settlement.3 
+				}
+	}
+
+}
+
+country_event = {
+    id = id.settlement.4
+    fire_only_once = no
+    is_triggered_only = yes
+    hidden = yes
+
+    immediate = {
+
+                if = {		
+					limit = {	
+                            any_state = {
+								any_neighbor_state = {
+									has_state_flag =  borders_land_locked_state
+									is_owned_by = ROOT
+               					}
+									NOT = { is_core_of = ROOT }
+									NOT = { is_owned_by = ROOT }
+									owner = {
+									is_neighbor_of = ROOT 
+									}
+                                    has_state_flag = Land_locked_state
+                            }
+   				 	}
+			        every_state = {
+				        limit = {
+								any_neighbor_state = {
+									has_state_flag =  borders_land_locked_state
+									is_owned_by = ROOT
+               					}
+                                has_state_flag = Land_locked_state
+								NOT = { is_core_of = ROOT }
+								owner = {
+									is_neighbor_of = ROOT 
+								}
+				        }
+				        ROOT = { transfer_state = PREV }
+                        clr_state_flag = Land_locked_state
+			        }
+			        every_state = {
+				        limit = {
+                                    has_state_flag = borders_land_locked_state
+									NOT = {
+										any_neighbor_state = {
+											has_state_flag = Land_locked_state
+               							}
+									}
+				        }
+                        clr_state_flag = borders_land_locked_state
+			        }
+				}
+	}
+
+}
+country_event = {
+    id = id.settlement.5
+    fire_only_once = no
+    is_triggered_only = no
+    hidden = yes
+
+	trigger = {
+		ROOT = { has_war = no }
+			any_state = {
+					is_owned_by = ROOT
+					is_coastal = no 
+					NOT = { has_state_flag = connected_via_con }
+					NOT = { is_in_home_area = no }
+					any_neighbor_state = {
+						is_coastal = yes
+						is_owned_by = ROOT
+					}
+			}		
+	}
+
+    immediate = {
+			every_state = {
+				limit = {
+					is_owned_by = ROOT
+					is_coastal = no 
+					NOT = { has_state_flag = connected_via_con }
+					NOT = { is_in_home_area = no }
+					any_neighbor_state = {
+						is_coastal = yes
+						is_owned_by = ROOT
+					}
+				}
+			set_state_flag = {
+  				  flag = connected_via_con
+  				  days = 28
+				  value = 1
+				}
+			}
+			if = {
+				limit = {
+					any_state = {
+							is_owned_by = ROOT
+							is_coastal = no 
+							NOT = { has_state_flag = connected_via_con }
+							NOT = { is_in_home_area = no }
+							any_neighbor_state = {
+								has_state_flag = connected_via_con
+								is_owned_by = ROOT
+							}
+					}
+				}
+				country_event = id.settlement.7
+			}
+			if = {
+				limit = {
+					any_state = {
+							is_owned_by = ROOT
+							is_coastal = no 
+							NOT = { has_state_flag = connected_via_con }
+							NOT = { is_in_home_area = no }
+							any_neighbor_state = {
+								is_coastal = yes
+								is_owned_by = ROOT
+							}
+					}						
+				}
+				country_event = id.settlement.5
+			}
+	}
+}
+
+country_event = {
+    id = id.settlement.6
+    fire_only_once = no
+    is_triggered_only = no
+    hidden = yes
+
+	trigger = {
+		ROOT = { has_war = no }
+			any_state = {
+					is_owned_by = ROOT
+					is_coastal = no 
+					NOT = { has_state_flag = connected_via_con }
+					NOT = { is_in_home_area = no }
+					any_neighbor_state = {
+						owner = { is_subject_of = ROOT }
+					}
+			}		
+	}
+
+    immediate = {
+			every_state = {
+				limit = {
+					is_owned_by = ROOT
+					is_coastal = no
+					NOT = { has_state_flag = connected_via_con }
+					NOT = { is_in_home_area = no }
+					any_neighbor_state = {
+						owner = { is_subject_of = ROOT }
+					}
+				}
+			set_state_flag = {
+  				  flag = connected_via_con
+  				  days = 28
+				  value = 1
+				}
+			}
+
+			if = {
+				limit = {
+					any_state = {
+							is_owned_by = ROOT
+							is_coastal = no 
+							NOT = { has_state_flag = connected_via_con }
+							NOT = { is_in_home_area = no }
+							any_neighbor_state = {
+								has_state_flag = connected_via_con
+								is_owned_by = ROOT
+							}
+					}
+				}
+				country_event = id.settlement.7
+			}
+	}
+}
+
+country_event = {
+    id = id.settlement.7
+    fire_only_once = no
+    is_triggered_only = no
+    hidden = yes
+
+	trigger = {
+		ROOT = { has_war = no }
+			any_state = {
+					is_owned_by = ROOT
+					is_coastal = no 
+					NOT = { has_state_flag = connected_via_con }
+					NOT = { is_in_home_area = no }
+					any_neighbor_state = {
+						has_state_flag = connected_via_con
+						is_owned_by = ROOT
+					}
+			}		
+	}
+
+    immediate = {
+			every_state = {
+				limit = {
+					is_owned_by = ROOT
+					is_coastal = no
+					NOT = { has_state_flag = connected_via_con }
+					NOT = { is_in_home_area = no }
+					any_neighbor_state = {
+						has_state_flag = connected_via_con
+						is_owned_by = ROOT
+					}
+				}
+			set_state_flag = {
+  				  flag = connected_via_con
+  				  days = 28
+				  value = 1
+				}
+			}
+			if = {
+				limit = {
+					any_state = {
+							is_owned_by = ROOT
+							is_coastal = no 
+							NOT = { has_state_flag = connected_via_con }
+							NOT = { is_in_home_area = no }
+							any_neighbor_state = {
+								has_state_flag = connected_via_con
+								is_owned_by = ROOT
+							}
+					}	
+				}
+				country_event = id.settlement.7
+			}
+	}
+}
+
+country_event = {
+    id = id.settlement.8
+    fire_only_once = no
+    is_triggered_only = no
+    hidden = yes
+
+	trigger = {
+		ROOT = { has_war = no }
+			any_state = {
+					is_owned_by = ROOT
+					NOT = { is_in_home_area = no }
+					NOT = { has_state_flag = connected_via_con }
+					any_neighbor_state = {
+							is_in_home_area = no
+							is_owned_by = ROOT
+						}
+			}		
+	}
+
+    immediate = {
+			every_state = {
+				limit = {
+					is_owned_by = ROOT
+					NOT = { is_in_home_area = no }
+					NOT = { has_state_flag = connected_via_con }
+						any_neighbor_state = {
+							is_in_home_area = no
+							is_owned_by = ROOT
+						}
+				}
+			set_state_flag = {
+  				  flag = connected_via_con
+  				  days = 28
+				  value = 1
+				}
+			}
+	}
+}

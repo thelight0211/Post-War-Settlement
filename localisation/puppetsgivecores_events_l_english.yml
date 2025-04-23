@@ -1,0 +1,5 @@
+﻿l_english:
+ puppets_give_cores.1.t:0 "Core Territory in Puppet's Land"
+ puppets_give_cores.1.d:0 "Puppets hold our core states, as their overlord we can annex these lands to our own country."
+ puppets_give_cores.1.a:0 "Send request"
+ puppets_give_cores.1.b:0 "Nevermind" #Oh, I have a core?

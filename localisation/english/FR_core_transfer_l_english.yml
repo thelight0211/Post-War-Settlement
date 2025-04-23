@@ -1,0 +1,28 @@
+﻿l_english:
+
+ kr.political.75.t:0 "The [From.From.GetAdjective] Lands"
+ kr.political.75.d:0 "The [Root.GetAdjective] government has been discussing what to do with the [return_to.GetAdjective] lands we currently occupy - land which we have no rightful claim to. Should we return this land to them?"
+ kr.political.75.a:0 "Yes, return all land to them"
+ KR_will_return_all:0 "All coastal or contiguous owned states which are [return_to.GetAdjective] cores or claims will be returned to §Y[return_to.GetNameDef]§!.\n\nNote this will §Rnot§! include states that are [Root.GetAdjective] §Yclaimed§! or §Ycore§! states."
+ kr.political.75.b:0 "Yes, return land to them... but keep the most vital states"
+ KR_will_return_rest:0 "All coastal or contiguous owned states which are [return_to.GetAdjective] cores or claims will be returned to §Y[return_to.GetNameDef]§!.\n\nNote this will §Rnot§! include states that are [Root.GetAdjective] §Yclaimed§! or §Ycore§! states, nor will it include §Yvital§! states such as canals."
+ kr.political.75.c:0 "Return their core lands only"
+ KR_will_return_cores:0 "All coastal or contiguous owned states which are [return_to.GetAdjective] cores will be returned to §Y[return_to.GetNameDef]§!.\n\nNote this will §Rnot§! include [Root.GetAdjective] §Yclaimed§! or §Ycore§! states, nor §Yvital§! states such as canals. Any [return_to.GetAdjective] §Yclaims§! will also be retained."
+ kr.political.75.e:0 "We will keep it all!"
+ KR_will_not_return:0 "We will §Rnot§! return any of their land, nor will we be asked to do so again."
+
+ kr.political.76.t:0 "[From.GetNameDefCap] Returns [Root.GetAdjective] Land"
+ kr.political.76.d:0 "Our allies in [From.GetNameDefCap] have returned some of our proper lands to us!"
+ kr.political.76.a:0 "Great!"
+
+dynamic_puppet_category:0 "Core Return"
+return_cores_to_ally:0 "Return Cores to Ally"
+return_cores_to_subject:0 "Return Cores to Subject"
+return_cores_to_master:0 "Request our core territories"
+ 
+ ### Decisions ###
+ ask_for_cores:0 "Request the return of core territory"
+ ask_for_cores_decisions:0 "Request the return of core territory"
+ 
+ ### Opinion Modifiers ###
+ GEN_returned_territory:0 "Has agreed to return territory"

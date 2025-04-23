@@ -1,0 +1,107 @@
+﻿###########################
+# Political Events
+###########################
+
+add_namespace = kr.political
+
+###########################
+# Popularity Events
+###########################
+country_event = {
+	id = kr.political.75
+	immediate = { log = "[GetDateText]: [Root.GetName]: event kr.political.75 FROM = [From.GetName]" }
+	title = kr.political.75.t
+	desc = kr.political.75.d
+	picture = GFX_report_event_generic_diplomacy2
+
+	is_triggered_only = yes
+
+	option = {
+		log = "[GetLogInfo]: event generic_events.75 option generic_events.75.a"
+		name = kr.political.75.a #return all land
+		ai_chance = { 
+					base = 100 
+					factor = 100
+		}
+		clr_country_flag = KR_returning_land
+        	clr_country_flag = Decision_overlap_fix
+		hidden_effect = {
+			event_target:return_to = {
+				country_event = kr.political.76
+			}
+		}
+	}
+	option = {
+		name = kr.political.75.e #keep it all you pig
+		trigger = {
+			is_ai = no
+		}
+		clr_country_flag = KR_returning_land
+        	clr_country_flag = Decision_overlap_fix
+		custom_effect_tooltip = KR_will_not_return
+		hidden_effect = {
+			every_state = {
+				limit = {
+					is_owned_by = ROOT
+					OR = {
+						is_core_of = event_target:return_to
+						is_claimed_by = event_target:return_to
+					}
+					NOT = { has_state_flag = KR_keeping_stateROOT }
+				}
+				set_state_flag = KR_keeping_stateROOT
+			}
+		}
+	}
+}
+
+# Cores/claims have been returned by an ally
+country_event = {
+	id = kr.political.76
+	immediate = { log = "[GetDateText]: [Root.GetName]: event kr.political.76 FROM = [From.GetName]" }
+	title = kr.political.76.t
+	desc = kr.political.76.d
+	picture = GFX_report_event_generic_diplomacy2
+
+	is_triggered_only = yes
+
+	option = {
+		name = kr.political.76.a
+		while_loop_effect = {
+			limit = {
+				any_state = {
+					is_owned_by = FROM
+					NOT = {
+						is_claimed_by = FROM
+						is_core_of = FROM
+					}
+				OR = {
+					is_claimed_by = ROOT
+					is_core_of = ROOT
+				}
+					OR = {
+						any_neighbor_state = { is_owned_by = ROOT }
+						is_coastal = yes
+					}
+						FROM = { is_ai = no }
+					}
+					NOT = { has_state_flag = KR_keeping_state@FROM }
+				}
+			}
+			every_state = {
+				limit = {
+					is_owned_by = FROM
+					NOT = {
+						is_claimed_by = FROM
+						is_core_of = FROM
+					}
+				OR = {
+					is_claimed_by = ROOT
+					is_core_of = ROOT
+				}
+					NOT = { has_state_flag = KR_keeping_state@FROM }
+				}
+					ROOT = { transfer_state = PREV }
+			}
+		}
+	}

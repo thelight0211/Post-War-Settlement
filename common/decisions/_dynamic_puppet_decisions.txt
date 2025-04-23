@@ -1,0 +1,1117 @@
+dynamic_puppet_category = {  
+
+	creat_dynamic_puppet = {
+
+		icon = generic_military
+		available = {
+			has_war = no	
+			is_subject = no	
+				NOT = {
+					any_country_with_original_tag = {
+   					 	original_tag_to_check = FROM  
+						exists = yes
+						OR = {
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+		}
+		
+		visible = {
+			    NOT = {
+				OR = {
+					FROM = { has_country_flag = is_dynamic_tag }
+			        	FROM = { is_in_faction_with = ROOT } 
+					FROM = { is_subject_of = ROOT }
+				}
+			    }
+			is_subject = no
+	}
+
+		fire_only_once = no
+		
+		target_trigger = {
+			ROOT = {
+				any_owned_state = {
+					is_core_of = FROM
+					is_owned_by = ROOT
+					NOT = { 
+						is_core_of = ROOT 
+						is_claimed_by = ROOT
+				OR = {
+					AND = {
+						ROOT = { tag = ITA }
+						FROM = { tag = CRO }
+						OR = {
+							state = 163 #Zara
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 728
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = SIB }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 123
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 28
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 664
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 73
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 76
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 84
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 83
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 82
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 77
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 971
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 766
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 80
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 184
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 908
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 39
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = SPR }
+						FROM = { tag = FROM }
+						OR = {
+							state = 290
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = SPA }
+						FROM = { tag = FROM }
+						OR = {
+							state = 290
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 119
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 146
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 147
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 722
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 729
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 685
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ITA }
+						FROM = { tag = ETH }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = CZE }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = KUR }
+						OR = {
+							state = 680
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 326
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = UKR }
+						FROM = { tag = SOV }
+						OR = {
+							state = 137
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 106
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 970
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 184
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 731
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 108
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = CZE }
+						OR = {
+							state = 69
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = CZE }
+						OR = {
+							state = 72
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = CZE }
+						OR = {
+							state = 74
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ITA }
+						FROM = { tag = YUG }
+						OR = {
+							state = 163 #Zara
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = SOM }
+						OR = {
+							state = 269
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { 
+							 tag = GER
+							 has_government = fascism 
+						}
+						FROM = { tag = FROM }
+						OR = {
+							state = 895
+							state = 894
+							state = 541
+							state = 893
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = SOM }
+						OR = {
+							state = 903
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 329
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 799 #Hatay
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = YEM }
+						OR = {
+							state = 659 #Aden
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = YEM }
+						OR = {
+							state = 992 #Aden
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = YEM }
+						OR = {
+							state = 906 #Aden
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = LIT }
+						OR = {
+							state = 784
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { 
+								OR = { 
+									tag = JAP
+									tag = GXC
+									tag = YUN
+									tag = XSM
+									tag = SHX
+									tag = SIK
+									tag = MAN
+								}
+						}
+						FROM = { tag = CHI }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = SHX }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = XSM }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = YUN }
+					}
+				}
+				OR = {
+					AND = {	
+						ROOT = { tag = ROOT }
+						FROM = { tag = GXC }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = MEN }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { has_government = communism }
+						FROM = { tag = CHI }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { has_government = communism }
+						FROM = { tag = PRC }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { NOT = { has_government = communism } }
+						FROM = { tag = PRC }
+					}
+				}
+
+				OR = {
+					AND = {
+						ROOT = { 
+								OR = { 
+									tag = JAP
+									tag = GXC
+									tag = YUN
+									tag = XSM
+									tag = SHX
+									tag = SIK
+									tag = MAN 
+								}
+						}
+						FROM = { tag = PRC }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ENG }
+						FROM = { tag = YEM }
+						OR = {
+							state = 906 #Socotra
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = COG }
+						OR = {
+							state = 772
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = COG }
+						OR = {
+							state = 540
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = COG }
+						OR = {
+							state = 796
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 163
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = SPR }
+						FROM = { tag = MOR }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = SPA }
+						FROM = { tag = MOR }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = CRO }
+						OR = {
+							state = 103
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = CRO }
+						OR = {
+							state = 852
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 321 #Goa
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 164
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = SOV }
+						FROM = { tag = FIN }
+						OR = {
+							state = 722 
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = SOV }
+						FROM = { tag = FIN }
+						OR = {
+							state = 147 
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ENG }
+						FROM = { tag = YEM }
+						OR = {
+							state = 659 #Aden
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 320 #French India
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ALB }
+						FROM = { tag = SER }
+						OR = {
+							state = 802
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = JAP }
+						FROM = { tag = MAN }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = TIB }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = JAP }
+						FROM = { tag = MAN }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = JAP }
+						FROM = { tag = XSM }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = JAP }
+						FROM = { tag = SHX }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = SWE }
+						FROM = { tag = DEN }
+						OR = {
+							state = 910
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 1 #Corsica
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 736
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 852
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 735 #Savoy
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ITA }
+						FROM = { tag = FROM }
+						OR = {
+							state = 846
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = HUN }
+						FROM = { tag = FROM }
+						OR = {
+							state = 76
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = LAT }
+						OR = {
+							state = 814
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 273
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = LAT }
+						OR = {
+							state = 11
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = LAT }
+						OR = {
+							state = 815
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = LAT }
+						OR = {
+							state = 189
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = LAT }
+						OR = {
+							state = 188
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ITA }
+						FROM = { tag = SOM }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = SOV }
+						FROM = { tag = LIT }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = SOV }
+						FROM = { tag = LAT }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = SOV }
+						FROM = { tag = EST }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = FRA }
+						FROM = { tag = SOM }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = FRA }
+						FROM = { tag = AFA }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = GRE }
+						FROM = { tag = TUR }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = AFA }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = USA }
+						FROM = { tag = CAN }
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = USA }
+						FROM = { tag = PAN }
+						OR = {
+							state = 685 #Panama canal
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = FRA }
+						FROM = { tag = AFA }
+						OR = {
+							state = 268 #djibouti
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = SOV }
+						OR = {
+							state = 137
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 45 #Vojvoina
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 743
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = HUN }
+						OR = {
+							state = 764 #West banat
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = YUG }
+						OR = {
+							state = 105
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = YUG }
+						OR = {
+							state = 103
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = YUG }
+						OR = {
+							state = 163
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = YUG }
+						OR = {
+							state = 852
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = YUG }
+						OR = {
+							state = 736
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = YUG }
+						OR = {
+							state = 102
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 912
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 975
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = FROM }
+						OR = {
+							state = 802
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = YUG }
+						OR = {
+							state = 853
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = BUL }
+						OR = {
+							state = 731
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = BUL }
+						OR = {
+							state = 184
+						}
+					}
+				}
+				OR = {
+					AND = {
+						ROOT = { tag = ROOT }
+						FROM = { tag = YUG }
+						OR = {
+							state = 853
+						}
+					}
+				}
+ 
+					}
+				}
+			}	
+        }
+
+		cost = 0
+		days_remove = 0
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		remove_effect = {
+				create_dynamic_country = {
+					original_tag = FROM
+					copy_tag = FROM
+					
+					set_cosmetic_tag = FROM
+					every_state = {
+						limit = {
+							is_core_of = FROM
+							is_owned_by = ROOT
+							NOT = { 
+								is_core_of = ROOT 
+								is_claimed_by = ROOT
+							}
+						}
+						add_to_array = { ROOT.puppet_states@FROM = THIS }
+					}
+					for_each_scope_loop = {
+						array = ROOT.puppet_states@FROM
+
+						PREV = { 
+							transfer_state = PREV 
+							set_country_flag = is_dynamic_tag
+							}
+					}
+					ROOT = { puppet = PREV }
+					drop_cosmetic_tag = yes	
+				}
+			}
+
+	}
+	
+	
+}

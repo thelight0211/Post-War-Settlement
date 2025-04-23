@@ -1,0 +1,478 @@
+dynamic_puppet_category = { 
+	change_reichskommissariat_color_UKR = {
+		icon = generic_form_nation
+		selectable_mission = yes
+		days_mission_timeout = 180
+		is_good = no
+		
+		activation = {	
+			NOT = { has_cosmetic_tag = UKRR_GER }
+			is_subject_of = GER
+			tag = UKR
+			GER = { has_government = fascism }
+		}
+
+		visible = {
+			is_ai = yes
+		}
+		cancel_trigger = {
+			has_cosmetic_tag = UKRR_GER
+		}
+		complete_effect = {
+			set_cosmetic_tag = UKRR_GER
+		}
+		timeout_effect = {
+			set_cosmetic_tag = UKRR_GER
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+change_reichskommissariat_color_ENG = {
+	icon = generic_form_nation
+	selectable_mission = yes
+	days_mission_timeout = 180
+	is_good = no
+	
+	activation = {	
+		NOT = { has_cosmetic_tag = ENGR_GER }
+		is_subject_of = GER
+		tag = ENG
+		GER = { has_government = fascism }
+	}
+
+	visible = {
+		is_ai = yes
+	}
+	cancel_trigger = {
+		has_cosmetic_tag = ENGR_GER
+	}
+	complete_effect = {
+		set_cosmetic_tag = ENGR_GER
+	}
+	timeout_effect = {
+		set_cosmetic_tag = ENGR_GER
+	}
+	ai_will_do = {
+		factor = 100
+	}
+}
+
+change_reichskommissariat_color_BEL = {
+	icon = generic_form_nation
+	selectable_mission = yes
+	days_mission_timeout = 180
+	is_good = no
+	
+	activation = {	
+		NOT = { has_cosmetic_tag = BELR_GER }
+		is_subject_of = GER
+		tag = BEL
+		GER = { has_government = fascism }
+	}
+
+	visible = {
+		is_ai = yes
+	}
+	cancel_trigger = {
+		has_cosmetic_tag = BELR_GER
+	}
+	complete_effect = {
+		set_cosmetic_tag = BELR_GER
+	}
+	timeout_effect = {
+		set_cosmetic_tag = BELR_GER
+	}
+	ai_will_do = {
+		factor = 100
+	}
+}
+
+change_reichskommissariat_color_COG = {
+	icon = generic_form_nation
+	selectable_mission = yes
+	days_mission_timeout = 180
+	is_good = no
+	
+	activation = {	
+		NOT = { has_cosmetic_tag = COGR_GER }
+		is_subject_of = GER
+		tag = COG
+		GER = { has_government = fascism }
+	}
+
+	visible = {
+		is_ai = yes
+	}
+	cancel_trigger = {
+		has_cosmetic_tag = COGR_GER
+	}
+	complete_effect = {
+		set_cosmetic_tag = COGR_GER
+	}
+	timeout_effect = {
+		set_cosmetic_tag = COGR_GER
+	}
+	ai_will_do = {
+		factor = 100
+	}
+}
+
+change_reichskommissariat_color_GEO = {
+	icon = generic_form_nation
+	selectable_mission = yes
+	days_mission_timeout = 180
+	is_good = no
+	
+	activation = {	
+		NOT = { has_cosmetic_tag = GEOR_GER }
+		is_subject_of = GER
+		tag = GEO
+		GER = { has_government = fascism }
+	}
+
+	visible = {
+		is_ai = yes
+	}
+	cancel_trigger = {
+		has_cosmetic_tag = GEOR_GER
+	}
+	complete_effect = {
+		set_cosmetic_tag = GEOR_GER
+	}
+	timeout_effect = {
+		set_cosmetic_tag = GEOR_GER
+	}
+	ai_will_do = {
+		factor = 100
+	}
+}
+
+change_reichskommissariat_color_HOL = {
+	icon = generic_form_nation
+	selectable_mission = yes
+	days_mission_timeout = 180
+	is_good = no
+	
+	activation = {	
+		NOT = { has_cosmetic_tag = HOLR_GER }
+		is_subject_of = GER
+		tag = HOL
+		GER = { has_government = fascism }
+	}
+
+	visible = {
+		is_ai = yes
+	}
+	cancel_trigger = {
+		has_cosmetic_tag = HOLR_GER
+	}
+	complete_effect = {
+		set_cosmetic_tag = HOLR_GER
+	}
+	timeout_effect = {
+		set_cosmetic_tag = HOLR_GER
+	}
+	ai_will_do = {
+		factor = 100
+	}
+}
+
+change_reichskommissariat_color_KAZ = {
+	icon = generic_form_nation
+	selectable_mission = yes
+	days_mission_timeout = 180
+	is_good = no
+	
+	activation = {	
+		NOT = { has_cosmetic_tag = KAZR_GER }
+		is_subject_of = GER
+		tag = KAZ
+		GER = { has_government = fascism }
+	}
+
+	visible = {
+		is_ai = yes
+	}
+	cancel_trigger = {
+		has_cosmetic_tag = KAZR_GER
+	}
+	complete_effect = {
+		set_cosmetic_tag = KAZR_GER
+	}
+	timeout_effect = {
+		set_cosmetic_tag = KAZR_GER
+	}
+	ai_will_do = {
+		factor = 100
+	}
+}
+
+change_reichskommissariat_color_NOR = {
+	icon = generic_form_nation
+	selectable_mission = yes
+	days_mission_timeout = 180
+	is_good = no
+	
+	activation = {	
+		NOT = { has_cosmetic_tag = NORR_GER }
+		is_subject_of = GER
+		tag = NOR
+		GER = { has_government = fascism }
+	}
+
+	visible = {
+		is_ai = yes
+	}
+	cancel_trigger = {
+		has_cosmetic_tag = NORR_GER
+	}
+	complete_effect = {
+		set_cosmetic_tag = NORR_GER
+	}
+	timeout_effect = {
+		set_cosmetic_tag = NORR_GER
+	}
+	ai_will_do = {
+		factor = 100
+	}
+}
+
+change_reichskommissariat_color_SOV = {
+	icon = generic_form_nation
+	selectable_mission = yes
+	days_mission_timeout = 180
+	is_good = no
+	
+	activation = {	
+		NOT = { has_cosmetic_tag = SOVR_GER }
+		is_subject_of = GER
+		tag = SOV
+		GER = { has_government = fascism }
+	}
+
+	visible = {
+		is_ai = yes
+	}
+	cancel_trigger = {
+		has_cosmetic_tag = SOVR_GER
+	}
+	complete_effect = {
+		set_cosmetic_tag = SOVR_GER
+	}
+	timeout_effect = {
+		set_cosmetic_tag = SOVR_GER
+	}
+	ai_will_do = {
+		factor = 100
+	}
+}
+
+change_reichskommissariat_color_POL = {
+	icon = generic_form_nation
+	selectable_mission = yes
+	days_mission_timeout = 180
+	is_good = no
+	
+	activation = {	
+		NOT = { has_cosmetic_tag = POLR_GER }
+		is_subject_of = GER
+		tag = POL
+		GER = { has_government = fascism }
+	}
+
+	visible = {
+		is_ai = yes
+	}
+	cancel_trigger = {
+		has_cosmetic_tag = POLR_GER
+	}
+	complete_effect = {
+		set_cosmetic_tag = POLR_GER
+	}
+	timeout_effect = {
+		set_cosmetic_tag = POLR_GER
+	}
+	ai_will_do = {
+		factor = 100
+	}
+}
+
+	change_reichskommissariat_color_BLR = {
+		icon = generic_form_nation
+		selectable_mission = yes
+		days_mission_timeout = 180
+		is_good = no
+		
+		activation = {	
+			NOT = { has_cosmetic_tag = BLR_GER }
+			is_subject_of = GER
+			tag = BLR
+			GER = { has_government = fascism }
+		}
+
+		visible = {
+			is_ai = yes
+		}
+		cancel_trigger = {
+			has_cosmetic_tag = BLR_GER
+		}
+		complete_effect = {
+			set_cosmetic_tag = BLR_GER
+		}
+		timeout_effect = {
+			set_cosmetic_tag = BLR_GER
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+change_reichskommissariat_color_DEN = {
+	icon = generic_form_nation
+	selectable_mission = yes
+	days_mission_timeout = 180
+	is_good = no
+	
+	activation = {	
+		NOT = { has_cosmetic_tag = DENR_GER }
+		is_subject_of = GER
+		tag = DEN
+		GER = { has_government = fascism }
+	}
+
+	visible = {
+		is_ai = yes
+	}
+	cancel_trigger = {
+		has_cosmetic_tag = DENR_GER
+	}
+	complete_effect = {
+		set_cosmetic_tag = DENR_GER
+	}
+	timeout_effect = {
+		set_cosmetic_tag = DENR_GER
+	}
+	ai_will_do = {
+		factor = 100
+	}
+}
+
+change_reichskommissariat_color_CZE = {
+	icon = generic_form_nation
+	selectable_mission = yes
+	days_mission_timeout = 180
+	is_good = no
+	
+	activation = {	
+		NOT = { has_cosmetic_tag = CZER_GER }
+		is_subject_of = GER
+		tag = CZE
+		GER = { has_government = fascism }
+	}
+
+	visible = {
+		is_ai = yes
+	}
+	cancel_trigger = {
+		has_cosmetic_tag = CZER_GER
+	}
+	complete_effect = {
+		set_cosmetic_tag = CZER_GER
+	}
+	timeout_effect = {
+		set_cosmetic_tag = CZER_GER
+	}
+	ai_will_do = {
+		factor = 100
+	}
+}
+
+change_reichskommissariat_color_SLO = {
+	icon = generic_form_nation
+	selectable_mission = yes
+	days_mission_timeout = 180
+	is_good = no
+	
+	activation = {	
+		NOT = { has_cosmetic_tag = SLOR_GER }
+		is_subject_of = GER
+		tag = SLO
+		GER = { has_government = fascism }
+	}
+
+	visible = {
+		is_ai = yes
+	}
+	cancel_trigger = {
+		has_cosmetic_tag = SLOR_GER
+	}
+	complete_effect = {
+		set_cosmetic_tag = SLOR_GER
+	}
+	timeout_effect = {
+		set_cosmetic_tag = SLOR_GER
+	}
+	ai_will_do = {
+		factor = 100
+	}
+}
+
+change_siberia_color = {
+	icon = generic_form_nation
+	selectable_mission = yes
+	days_mission_timeout = 180
+	is_good = no
+	
+	activation = {	
+		NOT = { has_cosmetic_tag = SIB_COL }
+		tag = SIB
+	}
+
+	visible = {
+		is_ai = yes
+	}
+	cancel_trigger = {
+		has_cosmetic_tag = SIB_COL
+	}
+	complete_effect = {
+		set_cosmetic_tag = SIB_COL
+	}
+	timeout_effect = {
+		set_cosmetic_tag = SIB_COL
+	}
+	ai_will_do = {
+		factor = 100
+	}
+}
+
+change_reichskommissariat_color_SWE = {
+	icon = generic_form_nation
+	selectable_mission = yes
+	days_mission_timeout = 180
+	is_good = no
+	
+	activation = {	
+		NOT = { has_cosmetic_tag = SWER_GER }
+		is_subject_of = GER
+		tag = SWE
+		GER = { has_government = fascism }
+	}
+
+	visible = {
+		is_ai = yes
+	}
+	cancel_trigger = {
+		has_cosmetic_tag = SWER_GER
+	}
+	complete_effect = {
+		set_cosmetic_tag = SWER_GER
+	}
+	timeout_effect = {
+		set_cosmetic_tag = SWER_GER
+	}
+	ai_will_do = {
+		factor = 100
+	}
+}
+}
+
