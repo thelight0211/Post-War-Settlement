@@ -1,6 +1,0 @@
-﻿l_english:
-RULE_DISABLE_REICH_ANNEXATION_DECISIONS_T:0 "Disable fascist Germany post-war decisions"
-DISABLE_REICH_ANNEXATION_DECISIONS:0 "Disable post-war decisions"
-DISABLE_REICH_ANNEXATION_DECISIONS_DESC:0 "Disable post-war annexation decisions for fascist Germany, this option allows the formation of vanilla reichskommissariats"
-ENABLE_REICH_ANNEXATION_DECISIONS:0 "Enable post-war decisions"
-ENABLE_REICH_ANNEXATION_DECISIONS_DESC:0 "Enable post-war annexation decisions for fascist Germany to trigger"
